@@ -5,6 +5,8 @@ class Deck
   attr_reader :deck
   private :deck
 
+  # Card::SUITS is referencing the SUITS array within the Card class. Use ::
+  # with data and not a . like a method
   def initialize
     @deck = Card::SUITS.map do |suit|
       Card::RANKS.map { |rank| Card.new(rank, suit) }
